@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+  <!-- oncontextmenu="return false -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utechkar - Home Loan Calculator</title>
+    <link rel="stylesheet" href="/public/styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="This is an home loan calculator Application which helps user to calculate the Monthly EMI for current rate of interest"/>
+    <script src="/public/index.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="calculator-container">
+               <div class="box">
+                 <h1 style="color: #2A3990;"><%= title %></h1>
+                    <form method="post" action="/calculate">
+                      <div class="form-box">
+                        <p class="input-fields">
+                          <span class="label">Loan Amount: </span> &nbsp;  
+                          <span class="label" id="myValue"> 0</span> <br>
+                          <input type="range" name="range" id="myRange" min="100000" max="10000000" style="width:100%" oninput="showamount()"> 
+                            <span class="label rangeMin">min: 1 Lac</span>
+                            <span class="label rangeMax"> max: 1 Cr</span> 
+                        </div>
+                      </p>
+                      <p class="input-fields">
+                          <span class="label">Bank:</span> &nbsp; &nbsp;
+                          <select id="selectedOption" name="banknameOption" onchange="showChange()">
+                            <% for(var i=0; i< bankoptions.length; i++){ %>
+                               <option value="<%=bankoptions[i]%>"><%=bankoptions[i]%></option>
+                            <%}%>
+                          </select>
+                        <span class="label roi">Rate of Interest(p.a):</span>  
+                        <span id="roi" class="label roi" name="roiVal">0</span>
+                      </p>
+                      <!-- <p class="input-fields">
+                        <span class="label">Rate of Interest(p.a):</span>  
+                        <span id="roi" class="label" name="roiVal">0</span>
+                     </p> -->
+                     <p class="input-fields" style="margin-top: 10px;">
+                      <span class="label">Tenure :</span> &nbsp;
+                      <span class="label" id="tenureVal">0</span><br>
+                      <input type="range" name="tenure" id="tenureId" min="1" max="30" style="width:100%" oninput="showtenure()"> 
+                   </p>
+
+                   <div class="result">
+                      <p class="label result">
+                           <span class="result"> <strong>Monthly EMI:</strong></span>
+                           <span class="resultVal" id="montly_emi">0</span>
+                      </p>
+                      <p class="label result">
+                        <span class="result"> <strong>Principal Amount:</strong></span>
+                        <span class="resultVal" id="principal_amount">0</span>
+                   </p>
+                   <p class="label result">
+                    <span class="result"><strong>Total Interest:</strong></span>
+                    <span class="resultVal" id="total_interest">0</span>
+               </p>
+               <p class="label result">
+                <span class="result"> <strong>Total Amount:</strong></span>
+                <span  class = "resultVal" id="total_pay">0</span>
+           </p>
+                   </div>
+
+                      </div>
+                    </form>
+
+                    <input id = "submitBtn" type="submit" value="Calculate" onclick="calculator()">
+
+               </div>      
+        </div>
+
+          <div class="widget">
+              <h2 id="widgetTitle" style="text-align:center;"></h2>
+          </div>
+
+
+        <div class="container-fluid">
+          <h3> What is Home Loan ? </h3>
+           <p>To acquire home is an aspiration of many individuals, home loan is an amount a person or an individual borrow from bank or financial institution's to buy their new home. Financial institution's provides reliable and protected loan's for an individual. A home loan has a tendancy upto 30 years, Home loans are repaid through EMI's. <br> Eligible criteria for home loan are:<br> 1. Age limit should be between 21 to 65 years <br> 2. Minimum salary should be 10,000 </p>
+        </div>
+
+        <div class="container-fluid">
+          <h3> What is EMI ? </h3>
+           <p>The term EMI is known as <strong>Equated Monthly Installment</strong>. It is fixed amount made by a Mortgagor or Loanee to a banker. the payments are made regularly to repay an outstanding loan within a certain period of time. In EMI, the loanee are mostly allowed to pay amount with current rate of interest. The benefit of EMI for an mortgagor is they know how much money they will need to pay towards the loan each month. In EMI, the loan is fully paid off along with interest</p>
+        </div>
+
+
+        <div class="container-fluid">
+          <h3> What is Home Loan Calculator ? </h3>
+           <p>Home Loan calculator is an computation calculator to calculate montly EMI with an ease mode. Complex calculation are done in less time without solving it manually. Home loan calculator are time saving calculator which is most important advantage for home buyer's. It can be unlimitedly used. You can check EMI's for various amount of loan's and can choose wisely which suit's your financial conditions. It give an accurate perception which help's an individual for financial planning.</p>
+        </div>
+
+        <div class="container-fluid">
+          <h3>Benefits of Home Loan Calculator Application </h3>
+           <p>Following are the benefits of Home Loan Calculator:<br> 1. Calculation's is done with error free result. <br> 2. It is an time saving application. <br> 3. You can easily access at any time from any where. <br> 4. You can use it without reavealing your personal information. <br> 5. Give's an overall perception to financial planning</p>
+        </div>
+
+        <div class="container-fluid">
+          <h3>Formula for Home Loan Calculator</h3>
+           <p>Are you excited to know how manually you can calculate your home loan EMI ? So use the formulla given to achieve at an error-free result <br> P = <strong>Principal Amount</strong>, <br> EMI = <strong>Applicable amount of EMI</strong>, <br> R = <strong>Rate of Interest </strong>,<br> N = <strong>Repayment tenure.</strong><br><strong>(i.e.,  EMI = P * R (1 + R)^ N  / [(1 + R) ^ N - 1] )</strong>,  Total Interest = EMI * Months - Loan Amount, Total Amount = EMI * Months</p>
+        </div>
+       
+    <div class="footer">
+        <span><%= copyrighcontent %></span>
+    </div>
+</body>
+</html>

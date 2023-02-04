@@ -1,0 +1,410 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+   background-color: #E5E0FF;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+   font-size: 18px;
+}
+
+
+.calculator-container{
+  min-height: 100vh;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom left, #2A3990 50%, #FAAB78 50%);
+}
+
+.box{
+     background-color: #FAF8F1;
+     position: absolute;
+     padding: 25px;
+     margin: 4% 31%;
+     min-width: 200px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-box{
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.input-fields{
+    padding: 2px;
+}
+
+input:hover{
+cursor: pointer;
+}
+
+.result{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.roi{
+  font-size: 15px;
+  margin-left: 8px;
+}
+
+.rangeMin{
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.rangeMax{
+  font-size: 15px;
+  font-weight: 700;
+  float: right;
+}
+
+.resultVal{
+  float: right;
+}
+
+.container-fluid{
+  margin: 15px 15px;
+  padding: 9px;
+}
+
+p{
+  text-align:justify;
+  padding-top: 15px;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+h3{
+  font-size: 28px;
+}
+
+:optional{
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#ctaButton{
+  background-color:   #3D8361 ;
+  font-size: 16px;
+  color:#E5E0FF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#ctaButton:hover{
+  background-color: #1C6758;
+}
+
+@media only screen and (max-width: 1181px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 9% 29%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 95vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 58% 42% !important;
+}
+#ctaButton{
+  margin-top: 40px !important;
+}
+#widgetTitle{
+  height: 14vh !important;
+}
+
+p{
+  font-size: 18px;
+}
+}
+
+
+@media only screen and (max-width: 1025px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 9% 29%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 105vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 69% 42% !important;
+}
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 9% 22%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 182vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 74% 37% !important;
+}
+
+#ctaButton{
+  height: 50px !important;
+  width: 200px !important;
+}
+#widgetTitle{
+  height: 25vh !important;
+}
+
+p{
+  font-size: 18px;
+}
+}
+
+
+@media only screen and (max-width: 900px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 9% 24%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 195vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 83% 37% !important;
+}
+
+#ctaButton{
+  height: 50px !important;
+  width: 200px !important;
+}
+#widgetTitle{
+  height: 28vh !important;
+}
+
+p{
+  font-size: 18px;
+}
+
+}
+
+
+@media only screen and (max-width: 825px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 9% 22%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 69vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 87% 39% !important;
+}
+
+#ctaButton{
+  margin-top: 40px !important;
+}
+#widgetTitle{
+  height: 10vh !important;
+}
+
+p{
+  font-size: 18px;
+}
+}
+
+@media only screen and (max-width: 769px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 5% 19%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 69vh;
+}
+#submitBtn{
+  width: 200px !important;
+  margin: 82% 38% !important;
+}
+}
+
+@media only screen and (max-width: 750px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 5% 19%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 200vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 88% 38% !important;
+}
+
+#widgetTitle{
+  height: 30vh !important;
+}
+
+}
+
+
+@media only screen and (max-width: 700px) {
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 5% 16%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 190vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 96% 33% !important;
+}
+p{
+  font-size: 18px;
+}
+
+#ctaButton{
+  height: 15vh !important;
+  margin-bottom: 10px;
+}
+
+#widgetTitle{
+  height: 40vh !important;
+}
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  h1{
+      font-size: 24px;
+  }
+  .box{
+      margin: 13% 6%;
+      min-width: 220px;
+ }
+
+ .calculator-container{
+  min-height: 90vh;
+}
+
+#submitBtn{
+  width: 200px !important;
+  margin: 176% 26% !important;
+}
+p{
+  font-size: 18px;
+}
+
+#ctaButton{
+  height: 50px !important;
+  width: 30vh !important;
+}
+#widgetTitle{
+  height: 20vh !important;
+}
+}
+
+@media only screen and (max-width: 376px) {
+
+    h1{
+        font-size: 24px;
+    }
+    .box{
+        margin: 13% 6%;
+        min-width: 220px;
+   }
+
+   .calculator-container{
+    min-height: 118vh;
+  }
+
+  #submitBtn{
+    width: 200px !important;
+    margin: 192% 24% !important;
+  }
+  p{
+    font-size: 18px;
+
+  }
+
+  #widgetTitle{
+    height: 26vh !important;
+  }
+
+  #ctaButton{
+    height: 50px !important;
+    width: 30vh !important;
+  }
+} 
+
+.footer{  
+    left: 0;
+    bottom: 0;
+    background-color: #FAAB78;
+    color: #222222;
+    text-align: center;
+    padding: 3px;
+}
+
+#submitBtn{
+  position: absolute;
+  margin: 43% 40%;
+  padding: 7px;
+  width: 300px;
+  background: #2A3990;
+  color: #E5E0FF;
+  border-style: none;
+  font-size: 21px;
+}
+
+#submitBtn:hover{
+    cursor: pointer;
+    background-color: #205295;
+
+}
+
